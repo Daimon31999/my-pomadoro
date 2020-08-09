@@ -5,10 +5,12 @@
     "main": "index.js",
     "bin": "bin.js",
     "scripts": {
-        "start": "node bin.js",
-        "test": "node test.js"
+        "start": "node bin.js"
     },
     "author": "Dima Hinev",
     "license": "MIT",
-    "dependencies": {}
+    "dependencies": {},
+    "pkg": {
+        "assets": "sounds/*"
+    }
 }
