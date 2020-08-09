@@ -41,7 +41,7 @@ Daimon31999/my-pomadoro.git
 cd my-pomadoro/
 ```
 
-1. **Open with PowerShell!**[](screenshots/1.png)
+1. **Open pomadoro.lnk with PowerShell!**[](screenshots/1.png)
 
 2. If **PowerShell** is not in list **add** it with following path
 
@@ -49,14 +49,8 @@ cd my-pomadoro/
 %SystemRoot%\system32\WindowsPowerShell\v1.0\powershell.exe
 ```
 
-3. **Create a shortcut**
-   ![](screenshots/2.png)
+3. **Rename it and move anywhere you want** 🚀
 
-4. **Rename it and move anywhere** 🚀
-
-5. **Change the icon** of the shorcut. For example choose _screenshots/pomodoro.ico_
-   ![](screenshots/3.png)
-
-6. Use it !!! 🍅
+4. Use it !!! 🍅
 
 # 🐧 Linux

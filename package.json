@@ -9,8 +9,5 @@
     },
     "author": "Dima Hinev",
     "license": "MIT",
-    "dependencies": {},
-    "pkg": {
-        "assets": "sounds/*"
-    }
+    "dependencies": {}
 }

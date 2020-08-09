@@ -59,8 +59,8 @@ const COLOR = {
 const config = {
     /*  MAIN SETTINGS */
     rounds: 12, // total cound of rounds
-    work_minutes: 0.05,
-    break_minutes: 0.05,
+    work_minutes: 25,
+    break_minutes: 25,
     long_break_minutes: 0.05,
     /*  CUSTOMIZATION */
     // ALARM
