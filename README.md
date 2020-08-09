@@ -9,10 +9,17 @@ Pomodoro is a console timer app!
 
 Helps you **achieve your own goals** and makes you **motivated** by enhance **productivity**.
 
+# Requirements
+
+Node js
+Git
+
 # Installation
 
 ```
-npm i
+git clone https://github.com/
+Daimon31999/my-pomadoro.git
+cd my-pomadoro/
 node bin.js
 # OR
 npm run start
