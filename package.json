@@ -5,7 +5,7 @@
     "main": "index.js",
     "bin": "bin.js",
     "scripts": {
-        "start": "node bin.js"
+        "start": "node src/bin.js"
     },
     "author": "Dima Hinev",
     "license": "MIT",
