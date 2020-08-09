@@ -48,7 +48,6 @@ cd my-pomadoro/
 ```
 %SystemRoot%\system32\WindowsPowerShell\v1.0\powershell.exe
 ```
-
 3. **Rename it and move anywhere you want** 🚀
 
 4. Use it !!! 🍅
