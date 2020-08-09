@@ -1,0 +1,14 @@
+{
+    "name": "mypomadoro",
+    "version": "1.0.0",
+    "description": "Pomadoro console app",
+    "main": "index.js",
+    "bin": "bin.js",
+    "scripts": {
+        "start": "node bin.js",
+        "test": "node test.js"
+    },
+    "author": "Dima Hinev",
+    "license": "MIT",
+    "dependencies": {}
+}
