@@ -1,1 +1,1 @@
-node bin.js
+node src/bin.js
