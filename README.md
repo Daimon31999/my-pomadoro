@@ -11,10 +11,18 @@ Helps you **achieve your own goals** and makes you **motivated** by enhance **pr
 
 # Requirements
 
+ <img align="left" alt="Node.js" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/nodejs/nodejs.png" />
+
+&nbsp;
 Node js
+
+<img align="left" alt="Git" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/git/git.png" />
+&nbsp;
 Git
 
 # Installation
+
+## &nbsp;Node.js <img align="left" alt="Node.js" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/nodejs/nodejs.png" />
 
 ```
 git clone https://github.com/
@@ -24,3 +32,28 @@ node bin.js
 # OR
 npm run start
 ```
+
+## &nbsp;Windows<img align="left" alt="Git" width="26px" src="https://i0.wp.com/blog.ncce.org/wp-content/uploads/2017/04/microsoft-windows-logo-vector-download.jpg?fit=500%2C500" />
+
+```
+git clone https://github.com/
+Daimon31999/my-pomadoro.git
+cd my-pomadoro/
+```
+
+1. Open with PowerShell![](screenshots/1.png)
+
+2. If PowerShell is not in list add it with following path
+
+```
+%SystemRoot%\system32\WindowsPowerShell\v1.0\powershell.exe
+```
+
+3. Create a shortcut
+   ![](screenshots/2.png)
+
+4. Rename it and move anywhere 🚀
+
+5. Use it !!! 🍅
+
+# 🐧 Linux
