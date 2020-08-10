@@ -67,7 +67,7 @@ const player = () => {
 
     return {
         play: async(alarm_name, duration) => {
-            const soundPath = path.join(__dirname, `./sounds/${alarm_name}`)
+            let soundPath = path.join(__dirname, `../src/sounds/${alarm_name}`)
                 // try to file existence
             fs.access(soundPath, fs.F_OK, (err) => {
                 if (err) {
@@ -84,7 +84,9 @@ const player = () => {
                     playCommand = windowPlayCommand(soundPath, duration)
                     break
                 case 'linux':
-                    playCommand = linuxPlayCommand('./sounds/tick-work.mp3', 2)
+                    soundPath = path.join(__dirname, `../src/sounds/tick-work.mp3`)
+
+                    playCommand = linuxPlayCommand(soundPath, 2)
                     break
                 case 'darwin':
                     playCommand = macPlayCommand(soundPath)
