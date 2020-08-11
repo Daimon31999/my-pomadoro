@@ -2,10 +2,14 @@ const COLOR = require('./color')
 
 const config = require('./config')
 
-const toReset = () => {
-    let date_ob = new Date();
-    let now = `${date_ob.getDate()}/${(date_ob.getMonth() + 1)}`
+const readline = require('readline').createInterface({
+    input: process.stdin,
+    output: process.stdout,
+})
 
+const toReset = (config) => {
+    let date_ob = new Date()
+    let now = `${date_ob.getDate()}/${date_ob.getMonth() + 1}`
 
     if (readFromJSON().date == undefined) {
         writeToJSON('date', now)
@@ -19,17 +23,21 @@ const toReset = () => {
 
     let saved_date_split = saved_date.split('/')
         // reset (return 0)
-    if (parseInt(now_split[0]) > parseInt(saved_date_split[0]) || parseInt(now_split[1]) > parseInt(saved_date_split[1])) {
+    if (
+        parseInt(now_split[0]) > parseInt(saved_date_split[0]) ||
+        parseInt(now_split[1]) > parseInt(saved_date_split[1]) ||
+        readFromJSON().round == config.rounds
+    ) {
         writeToJSON('round', 0)
         writeToJSON('date', now)
     }
 }
 
 const writeToJSON = (property, val = 0) => {
-    const fs = require('fs');
+    const fs = require('fs')
     const path = require('path')
     const fileName = path.join(__dirname, './state.json')
-    const state = require(fileName);
+    const state = require(fileName)
     switch (property) {
         case 'date':
             state.date = val
@@ -44,7 +52,7 @@ const writeToJSON = (property, val = 0) => {
 }
 
 const readFromJSON = () => {
-    let fs = require('fs');
+    let fs = require('fs')
     let path = require('path')
     const fileName = path.join(__dirname, './state.json')
 
@@ -60,7 +68,7 @@ const timer = (
     count = 0
 ) => {
     return new Promise((resolve) => {
-        let myVar = setInterval(() => {
+        function x() {
             let seconds = minutes * 60 * 1000 // 5 мин * 60 сек * 1000 миллисек
             let date = new Date(seconds)
             date = parseInt(date.getTime(), 10) - count // перевести время в число и отнять счетчик
@@ -78,9 +86,12 @@ const timer = (
                 resolve(1) // 1 = ok
                 clearInterval(myVar)
             }
-
             count += 1000 // добавить секунду
-        }, 1000)
+        }
+
+        if (round == 0) x()
+
+        let myVar = setInterval(x, 1000)
     })
 }
 
@@ -151,11 +162,11 @@ const player = () => {
 
 async function pomadoro(config) {
     const sound = player()
-    await toReset()
+    await toReset(config)
     let round = await readFromJSON().round
-        // let round = 0
-    while ((round = await readFromJSON().round) < config.rounds) {
 
+    // let round = 0
+    while ((round = await readFromJSON().round) < config.rounds) {
         // work
         await timer(
             config.work_minutes,
