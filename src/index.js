@@ -11,25 +11,29 @@ const toReset = (config) => {
     let date_ob = new Date()
     let now = `${date_ob.getDate()}/${date_ob.getMonth() + 1}`
 
+    // if date is not in state.json
     if (readFromJSON().date == undefined) {
         writeToJSON('date', now)
     }
+    // if round is not in state.json
     if (readFromJSON().round == undefined) {
         writeToJSON('round', 0)
     }
-    let saved_date = readFromJSON().date
+    let dateFromState = readFromJSON().date
 
-    let now_split = now.split('/')
+    let nowSplit = now.split('/')
 
-    let saved_date_split = saved_date.split('/')
+    let dateFromStateSplit = dateFromState.split('/')
         // reset (return 0)
     if (
-        parseInt(now_split[0]) > parseInt(saved_date_split[0]) ||
-        parseInt(now_split[1]) > parseInt(saved_date_split[1]) ||
+        parseInt(nowSplit[0]) > parseInt(dateFromStateSplit[0]) ||
+        parseInt(nowSplit[1]) > parseInt(dateFromStateSplit[1]) ||
         readFromJSON().round == config.rounds
     ) {
         writeToJSON('round', 0)
         writeToJSON('date', now)
+    } else if (readFromJSON().round != 0) {
+        writeToJSON('resumed', true)
     }
 }
 
@@ -44,6 +48,9 @@ const writeToJSON = (property, val = 0) => {
             break
         case 'round':
             state.round = val
+            break
+        case 'resumed':
+            state.resumed = val
             break
     }
     const jsonString = JSON.stringify(state, null, 4)
@@ -77,6 +84,7 @@ const timer = (
             process.stdout.write(
                 `${name} - ${time_text} ${date.getMinutes()}:${date.getSeconds()} ${round_text} ${round}`
             )
+
             setTimeout(() => {
                 process.stdout.clearLine()
                 process.stdout.cursorTo(0)
@@ -89,8 +97,10 @@ const timer = (
             count += 1000 // добавить секунду
         }
 
-        if (round == 0) x()
-
+        if (round == 0 || readFromJSON().resumed == true) {
+            x()
+            writeToJSON('resumed', false)
+        } // prints timer instantly
         let myVar = setInterval(x, 1000)
     })
 }
