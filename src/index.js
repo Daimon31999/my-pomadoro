@@ -10,6 +10,9 @@ const toReset = () => {
     if (readFromJSON().date == undefined) {
         writeToJSON('date', now)
     }
+    if (readFromJSON().round == undefined) {
+        writeToJSON('round', 0)
+    }
     let saved_date = readFromJSON().date
 
     let now_split = now.split('/')
