@@ -2,6 +2,52 @@ const COLOR = require('./color')
 
 const config = require('./config')
 
+const toReset = () => {
+    let date_ob = new Date();
+    let now = `${date_ob.getDate()}/${(date_ob.getMonth() + 1)}`
+
+
+    if (readFromJSON().date == undefined) {
+        writeToJSON('date', now)
+    }
+    let saved_date = readFromJSON().date
+
+    let now_split = now.split('/')
+
+    let saved_date_split = saved_date.split('/')
+        // reset (return 0)
+    if (parseInt(now_split[0]) > parseInt(saved_date_split[0]) || parseInt(now_split[1]) > parseInt(saved_date_split[1])) {
+        writeToJSON('round', 0)
+        writeToJSON('date', now)
+    }
+}
+
+const writeToJSON = (property, val = 0) => {
+    const fs = require('fs');
+    const path = require('path')
+    const fileName = path.join(__dirname, './state.json')
+    const state = require(fileName);
+    switch (property) {
+        case 'date':
+            state.date = val
+            break
+        case 'round':
+            state.round = val
+            break
+    }
+    const jsonString = JSON.stringify(state, null, 4)
+
+    fs.writeFileSync(fileName, jsonString)
+}
+
+const readFromJSON = () => {
+    let fs = require('fs');
+    let path = require('path')
+    const fileName = path.join(__dirname, './state.json')
+
+    return JSON.parse(fs.readFileSync(fileName, 'utf8'))
+}
+
 const timer = (
     minutes,
     round,
@@ -102,9 +148,11 @@ const player = () => {
 
 async function pomadoro(config) {
     const sound = player()
+    await toReset()
+    let round = await readFromJSON().round
+        // let round = 0
+    while ((round = await readFromJSON().round) < config.rounds) {
 
-    let round = 0
-    while (round < config.rounds) {
         // work
         await timer(
             config.work_minutes,
@@ -114,7 +162,8 @@ async function pomadoro(config) {
             config.round_text
         )
         sound.play(config.work_alarm_name, config.work_alarm_duration)
-        round++
+            // round++
+        await writeToJSON('round', ++round)
 
         // if long break
         if (round % 4 == 0 && round != 0 && round < config.rounds) {
