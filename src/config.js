@@ -2,9 +2,9 @@ const COLOR = require('./color')
 module.exports = {
     /*  MAIN SETTINGS */
     rounds: 12, // total cound of rounds
-    work_minutes: 0.05,
-    break_minutes: 0.05,
-    long_break_minutes: 0.05,
+    work_minutes: 25,
+    break_minutes: 5,
+    long_break_minutes: 25,
     /*  CUSTOMIZATION */
     // ALARM
     work_alarm_name: 'tick-work.mp3', // alarm name in sounds folder
