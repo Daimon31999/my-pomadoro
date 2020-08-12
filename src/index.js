@@ -2,11 +2,6 @@ const COLOR = require('./color')
 
 const config = require('./config')
 
-const readline = require('readline').createInterface({
-    input: process.stdin,
-    output: process.stdout,
-})
-
 const toReset = (config) => {
     let date_ob = new Date()
     let now = `${date_ob.getDate()}/${date_ob.getMonth() + 1}`
@@ -76,10 +71,10 @@ const timer = (
 ) => {
     return new Promise((resolve) => {
         function x() {
-            let seconds = minutes * 60 * 1000 // 5 мин * 60 сек * 1000 миллисек
+            let seconds = minutes * 60 * 1000 // 5 min * 60 sec * 1000 millisec
             let date = new Date(seconds)
-            date = parseInt(date.getTime(), 10) - count // перевести время в число и отнять счетчик
-            date = new Date(date) // получить новую дату из предыд. результата
+            date = parseInt(date.getTime(), 10) - count // translate time in number and subtract
+            date = new Date(date) // get new date from previous result
 
             process.stdout.write(
                 `${name} - ${time_text} ${date.getMinutes()}:${date.getSeconds()} ${round_text} ${round}`
@@ -94,7 +89,7 @@ const timer = (
                 resolve(1) // 1 = ok
                 clearInterval(myVar)
             }
-            count += 1000 // добавить секунду
+            count += 1000 // add 1 second
         }
 
         if (round == 0 || readFromJSON().resumed == true) {
@@ -128,10 +123,6 @@ const player = () => {
     )} ${playAudio} ${stopAudio(duration)}`
 
     /* LINUX PLAY COMMANDS */
-
-    // const linuxPlayCommand = (path, duration) =>
-    //     `sudo apt install sox && sudo apt install libsox-fmt-mp3 && sox ${path} short.mp3 trim ${duration}`
-
     const linuxPlayCommand = (soundPath, duration) =>
         `aplay ${soundPath} -d ${duration}`
 
@@ -186,7 +177,7 @@ async function pomadoro(config) {
             config.round_text
         )
         sound.play(config.work_alarm_name, config.work_alarm_duration)
-            // round++
+
         await writeToJSON('round', ++round)
 
         // if long break
@@ -213,7 +204,6 @@ async function pomadoro(config) {
     }
 }
 
-// pomadoro(config)
 module.exports.pomadoro = function(config) {
     return pomadoro(config)
 }
