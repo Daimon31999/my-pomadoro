@@ -5,10 +5,10 @@
 
 <h1 align="center">My Pomodoro🍅</h1>
 
-<!-- ![](https://media.giphy.com/media/Igp1aXS6Z0YUKKx9YE/giphy.gif) -->
+
 
 <div align="middle">
-<img src="https://media.giphy.com/media/Igp1aXS6Z0YUKKx9YE/giphy.gif" >
+<img src="https://media.giphy.com/media/RLzHobmk1IqYtowaBw/giphy.gif" >
 </div>
 
 Pomodoro is a console timer app!
