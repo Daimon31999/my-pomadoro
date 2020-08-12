@@ -5,6 +5,8 @@
 
 <h1 align="center">My Pomodoro🍅</h1>
 
+![](https://media.giphy.com/media/Igp1aXS6Z0YUKKx9YE/giphy.gif)
+
 Pomodoro is a console timer app!
 
 Helps you **achieve your own goals** and makes you **motivated** by enhance **productivity**.
