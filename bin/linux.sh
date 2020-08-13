@@ -5,7 +5,7 @@ LINK="/usr/local/sbin/my-pomadoro"
 # create symbol link if not exitst
 if [ ! -L "$LINK" ]; then
     echo "Create link..."
-    echo "Type your password:"
+    sudo rm /usr/local/sbin/my-pomadoro
     sudo ln -s $MYPATH /usr/local/sbin/my-pomadoro
     echo "Link created!"
 fi
