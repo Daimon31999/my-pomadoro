@@ -32,8 +32,8 @@ Git
 
 ```
 git clone https://github.com/
-Daimon31999/pomadoro.git
-cd pomadoro/
+Daimon31999/pomadoro-console.git
+cd pomadoro-console/
 node bin.js
 # OR
 npm run start
@@ -43,8 +43,8 @@ npm run start
 
 ```
 git clone https://github.com/
-Daimon31999/pomadoro.git
-cd pomadoro/
+Daimon31999/pomadoro-console.git
+cd pomadoro-console/
 ```
 
 1. **Open pomadoro.lnk with PowerShell!**[](screenshots/1.png)
@@ -62,9 +62,9 @@ cd pomadoro/
 # 🐧 Linux
 
 ```
-git clone https://github.com/Daimon31999/pomadoro.git
+git clone https://github.com/Daimon31999/pomadoro-console.git
 
-cd pomadoro/bin/
+cd pomadoro-console/bin/
 
 sh linux.sh
 
