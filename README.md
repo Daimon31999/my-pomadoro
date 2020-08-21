@@ -3,7 +3,7 @@
 </div>
 </br>
 
-<h1 align="center">My Pomodoro🍅</h1>
+<h1 align="center">Pomodoro🍅</h1>
 
 
 
@@ -32,8 +32,8 @@ Git
 
 ```
 git clone https://github.com/
-Daimon31999/my-pomadoro.git
-cd my-pomadoro/
+Daimon31999/pomadoro.git
+cd pomadoro/
 node bin.js
 # OR
 npm run start
@@ -43,8 +43,8 @@ npm run start
 
 ```
 git clone https://github.com/
-Daimon31999/my-pomadoro.git
-cd my-pomadoro/
+Daimon31999/pomadoro.git
+cd pomadoro/
 ```
 
 1. **Open pomadoro.lnk with PowerShell!**[](screenshots/1.png)
@@ -62,9 +62,9 @@ cd my-pomadoro/
 # 🐧 Linux
 
 ```
-git clone https://github.com/Daimon31999/my-pomadoro.git
+git clone https://github.com/Daimon31999/pomadoro.git
 
-cd my-pomadoro/bin/
+cd pomadoro/bin/
 
 sh linux.sh
 
