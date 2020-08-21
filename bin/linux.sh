@@ -1,12 +1,12 @@
 cd ../.
 MYPATH="$(pwd)"
-LINK="/usr/local/sbin/my-pomadoro"
+LINK="/usr/local/sbin/pomadoro-console"
 
 # create symbol link if not exitst
 if [ ! -L "$LINK" ]; then
     echo "Create link..."
-    sudo rm /usr/local/sbin/my-pomadoro
-    sudo ln -s $MYPATH /usr/local/sbin/my-pomadoro
+    sudo rm /usr/local/sbin/pomadoro-console
+    sudo ln -s $MYPATH /usr/local/sbin/pomadoro-console
     echo "Link created!"
 fi
 cd $LINK
@@ -15,7 +15,7 @@ then
     node ./src/bin.js
 else
     echo 'Create ALIAS pomadoro...'
-    MYALIAS="alias pomadoro=\"test=\$(pwd) && cd /usr/local/sbin/my-pomadoro/bin && sh linux.sh && cd \$test\""
+    MYALIAS="alias pomadoro=\"test=\$(pwd) && cd /usr/local/sbin/pomadoro-console/bin && sh linux.sh && cd \$test\""
     # Write to .bashrc
     echo $MYALIAS >> ~/.bashrc
     echo 'ALIAS created!'
