@@ -42,8 +42,7 @@ npm run start
 ## &nbsp;Windows<img align="left" alt="Git" width="26px" src="https://i0.wp.com/blog.ncce.org/wp-content/uploads/2017/04/microsoft-windows-logo-vector-download.jpg?fit=500%2C500" />
 
 ```
-git clone https://github.com/
-Daimon31999/pomadoro-console.git
+git clone https://github.com/Daimon31999/pomadoro-console.git
 cd pomadoro-console/
 ```
 
