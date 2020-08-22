@@ -5,8 +5,6 @@
 
 <h1 align="center">Pomodoro🍅</h1>
 
-
-
 <div align="middle">
 <img src="https://media.giphy.com/media/RLzHobmk1IqYtowaBw/giphy.gif" >
 </div>
@@ -46,7 +44,7 @@ git clone https://github.com/Daimon31999/pomadoro-console.git
 cd pomadoro-console/
 ```
 
-1. **Open pomadoro.lnk with PowerShell!**[](screenshots/1.png)
+1. **Open windows.ps1 with PowerShell!**
 
 2. If **PowerShell** is not in list **add** it with following path
 
@@ -54,7 +52,7 @@ cd pomadoro-console/
 %SystemRoot%\system32\WindowsPowerShell\v1.0\powershell.exe
 ```
 
-3. **Rename it and move anywhere you want** 🚀
+3. **Create shortcut, rename it and move anywhere you want** 🚀
 
 4. Use it !!! 🍅
 
